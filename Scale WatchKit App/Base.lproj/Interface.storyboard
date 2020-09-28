@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Scale-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="Scale" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Scale_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="sFx-Qi-X5w">
+                            <items>
+                                <group width="1" alignment="center" id="hed-uT-hiV">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="0.0kg" id="DkM-U7-j2k">
+                                            <fontDescription key="font" type="boldSystem" pointSize="56"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" continuous="YES" value="75" maximum="100" steps="200" id="Q96-By-w7v">
+                                    <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="weightSliderPressed:" destination="AgC-eL-Hgc" id="bQW-if-fQv"/>
+                                    </connections>
+                                </slider>
+                                <separator alignment="left" id="o3E-g7-jZE">
+                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </separator>
+                                <group width="1" alignment="left" layout="vertical" id="HF7-DC-Jtx">
+                                    <items>
+                                        <button width="1" alignment="left" title="Update Weight" id="iv0-oa-aWQ">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                            <connections>
+                                                <action selector="updateWeightButtonPressed" destination="AgC-eL-Hgc" id="m43-Gd-LlU"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="kilogramLabel" destination="DkM-U7-j2k" id="K21-tG-hUN"/>
+                        <outlet property="updateWeightButton" destination="iv0-oa-aWQ" id="47G-ja-lJ8"/>
+                        <outlet property="weightSlider" destination="Q96-By-w7v" id="VyB-Xb-4Ii"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="-105" y="443"/>
+        </scene>
+        <!--Confirmation Interface Controller-->
+        <scene sceneID="kab-1i-SRO">
+            <objects>
+                <controller id="Es9-VC-6iz" customClass="ConfirmationInterfaceController" customModule="Scale_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="447"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -27,21 +75,21 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="324" y="503"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Scale_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="609" y="664"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Scale_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="609" y="349"/>
         </scene>
     </scenes>
 </document>
