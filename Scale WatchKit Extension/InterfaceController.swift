@@ -15,12 +15,16 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     @IBOutlet weak var kilogramLabel: WKInterfaceLabel!
     @IBOutlet weak var updateWeightButton: WKInterfaceButton!
     @IBOutlet weak var weightSlider: WKInterfaceSlider!
+    @IBOutlet weak var updateWeightButtonGroup: WKInterfaceGroup!
     
     
     var currentWeight: Double?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        updateWeightButtonGroup.setCornerRadius(25)
+        
         
         currentWeight = 75.5
         weightSlider.setValue(Float(currentWeight!))
@@ -34,6 +38,9 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        crownSequencer.focus()
+        
     }
     
     override func didDeactivate() {

@@ -11,54 +11,73 @@
             <objects>
                 <controller title="Scale" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Scale_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="sFx-Qi-X5w">
+                        <group width="1" alignment="center" id="hed-uT-hiV">
                             <items>
-                                <group width="1" alignment="center" id="hed-uT-hiV">
-                                    <items>
-                                        <label alignment="center" verticalAlignment="center" text="0.0kg" id="DkM-U7-j2k">
-                                            <fontDescription key="font" type="boldSystem" pointSize="56"/>
-                                        </label>
-                                    </items>
-                                </group>
-                                <slider width="1" alignment="left" continuous="YES" value="75" maximum="100" steps="200" id="Q96-By-w7v">
-                                    <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <label alignment="center" text="0.0kg" id="DkM-U7-j2k">
+                                    <fontDescription key="font" type="boldSystem" pointSize="56"/>
+                                </label>
+                            </items>
+                        </group>
+                        <slider width="1" height="0.050000000000000003" alignment="left" continuous="YES" value="75" maximum="100" steps="200" minimumImage="nil" maximumImage="nil" id="Q96-By-w7v">
+                            <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="weightSliderPressed:" destination="AgC-eL-Hgc" id="bQW-if-fQv"/>
+                            </connections>
+                        </slider>
+                        <dateLabel alignment="center" verticalAlignment="bottom" id="SGb-xP-9Pc">
+                            <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <dateFormatterStyle key="dateStyle" medium="YES"/>
+                        </dateLabel>
+                        <group width="1" alignment="left" verticalAlignment="bottom" layout="vertical" id="HF7-DC-Jtx">
+                            <items>
+                                <button width="1" height="50" alignment="left" verticalAlignment="bottom" title="Update Weight" id="iv0-oa-aWQ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
                                     <connections>
-                                        <action selector="weightSliderPressed:" destination="AgC-eL-Hgc" id="bQW-if-fQv"/>
+                                        <action selector="updateWeightButtonPressed" destination="AgC-eL-Hgc" id="m43-Gd-LlU"/>
+                                        <segue destination="Es9-VC-6iz" kind="push" id="vn3-eh-Far"/>
                                     </connections>
-                                </slider>
-                                <separator alignment="left" id="o3E-g7-jZE">
-                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </separator>
-                                <group width="1" alignment="left" layout="vertical" id="HF7-DC-Jtx">
-                                    <items>
-                                        <button width="1" alignment="left" title="Update Weight" id="iv0-oa-aWQ">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                            <connections>
-                                                <action selector="updateWeightButtonPressed" destination="AgC-eL-Hgc" id="m43-Gd-LlU"/>
-                                            </connections>
-                                        </button>
-                                    </items>
-                                </group>
+                                </button>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="kilogramLabel" destination="DkM-U7-j2k" id="K21-tG-hUN"/>
                         <outlet property="updateWeightButton" destination="iv0-oa-aWQ" id="47G-ja-lJ8"/>
+                        <outlet property="updateWeightButtonGroup" destination="HF7-DC-Jtx" id="IAd-9d-Cb3"/>
                         <outlet property="weightSlider" destination="Q96-By-w7v" id="VyB-Xb-4Ii"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-105" y="443"/>
+            <point key="canvasLocation" x="-105.69565217391303" y="442.45535714285717"/>
         </scene>
         <!--Confirmation Interface Controller-->
         <scene sceneID="kab-1i-SRO">
             <objects>
-                <controller id="Es9-VC-6iz" customClass="ConfirmationInterfaceController" customModule="Scale_WatchKit_Extension"/>
+                <controller alwaysBounce="YES" fullScreen="YES" id="Es9-VC-6iz" customClass="ConfirmationInterfaceController" customModule="Scale_WatchKit_Extension">
+                    <items>
+                        <imageView width="50" height="50" alignment="center" verticalAlignment="center" image="checkmark.circle.fill" catalog="system" id="bVB-AM-VJy">
+                            <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <label width="1" alignment="center" verticalAlignment="center" text="Done" textAlignment="center" id="8gf-my-9ZV"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="bnL-Ks-orR">
+                            <items>
+                                <button width="1" height="50" alignment="left" verticalAlignment="bottom" title="OK" id="Sq0-u0-Zge">
+                                    <connections>
+                                        <action selector="okButtonPressed" destination="Es9-VC-6iz" id="QA6-tZ-9cW"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <separator alignment="left" verticalAlignment="bottom" alpha="0.0" id="DaB-TD-m4X"/>
+                    </items>
+                    <connections>
+                        <outlet property="buttonGroup" destination="bnL-Ks-orR" id="Ncf-mQ-L7n"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="98" y="447"/>
+            <point key="canvasLocation" x="121.95652173913042" y="445.49107142857144"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -92,4 +111,8 @@
             <point key="canvasLocation" x="609" y="349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="nil" width="128" height="128"/>
+    </resources>
 </document>

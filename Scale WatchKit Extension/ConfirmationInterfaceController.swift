@@ -11,6 +11,20 @@ import WatchKit
 
 class ConfirmationInterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var buttonGroup: WKInterfaceGroup!
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        
+        buttonGroup.setCornerRadius(25)
+        
+        //crownSequencer.focus()
+    }
+    
+    
+    @IBAction func okButtonPressed() {
+        popToRootController()
+    }
     
     
 }
