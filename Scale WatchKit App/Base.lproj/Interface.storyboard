@@ -9,16 +9,19 @@
         <!--Scale-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Scale" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Scale_WatchKit_App" customModuleProvider="target">
+                <controller title="Scale" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="Scale_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="center" id="hed-uT-hiV">
                             <items>
-                                <label alignment="center" text="0.0kg" id="DkM-U7-j2k">
-                                    <fontDescription key="font" type="boldSystem" pointSize="56"/>
+                                <label alignment="center" verticalAlignment="center" text="0.0" textAlignment="center" id="DkM-U7-j2k">
+                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="56"/>
+                                </label>
+                                <label height="0.59999999999999998" alignment="center" verticalAlignment="bottom" text="KG" id="96N-ab-Byk">
+                                    <fontDescription key="font" type="system" weight="heavy" pointSize="21"/>
                                 </label>
                             </items>
                         </group>
-                        <slider width="1" height="0.050000000000000003" alignment="left" continuous="YES" value="75" maximum="100" steps="200" minimumImage="nil" maximumImage="nil" id="Q96-By-w7v">
+                        <slider width="1" height="0.040000000000000001" alignment="left" continuous="YES" value="75" maximum="100" steps="200" minimumImage="nil" maximumImage="nil" id="Q96-By-w7v">
                             <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="weightSliderPressed:" destination="AgC-eL-Hgc" id="bQW-if-fQv"/>
@@ -26,6 +29,7 @@
                         </slider>
                         <dateLabel alignment="center" verticalAlignment="bottom" id="SGb-xP-9Pc">
                             <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
                             <dateFormatterStyle key="dateStyle" medium="YES"/>
                         </dateLabel>
                         <group width="1" alignment="left" verticalAlignment="bottom" layout="vertical" id="HF7-DC-Jtx">
@@ -33,7 +37,7 @@
                                 <button width="1" height="50" alignment="left" verticalAlignment="bottom" title="Update Weight" id="iv0-oa-aWQ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="18"/>
                                     <connections>
                                         <action selector="updateWeightButtonPressed" destination="AgC-eL-Hgc" id="m43-Gd-LlU"/>
                                         <segue destination="Es9-VC-6iz" kind="push" id="vn3-eh-Far"/>
@@ -78,37 +82,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="121.95652173913042" y="445.49107142857144"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="324" y="503"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Scale_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="609" y="664"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="Niz-AI-uX2">
-            <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Scale_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="609" y="349"/>
         </scene>
     </scenes>
     <resources>

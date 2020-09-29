@@ -11,9 +11,8 @@
 		3AEBC9E22521FFCA003EA6E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEBC9E02521FFCA003EA6E2 /* Interface.storyboard */; };
 		3AEBC9E42521FFD0003EA6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEBC9E32521FFD0003EA6E2 /* Assets.xcassets */; };
 		3AEBC9EB2521FFD0003EA6E2 /* Scale WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEBC9EA2521FFD0003EA6E2 /* Scale WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3AEBC9F02521FFD0003EA6E2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9EF2521FFD0003EA6E2 /* InterfaceController.swift */; };
+		3AEBC9F02521FFD0003EA6E2 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */; };
 		3AEBC9F22521FFD0003EA6E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */; };
-		3AEBC9F42521FFD0003EA6E2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F32521FFD0003EA6E2 /* NotificationController.swift */; };
 		3AEBC9F62521FFD0003EA6E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */; };
 		3AEBC9F82521FFD2003EA6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */; };
 		3AEBCA0925220368003EA6E2 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */; };
@@ -68,9 +67,8 @@
 		3AEBC9E32521FFD0003EA6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEBC9E52521FFD0003EA6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEBC9EA2521FFD0003EA6E2 /* Scale WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Scale WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AEBC9EF2521FFD0003EA6E2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		3AEBC9F32521FFD0003EA6E2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEBC9F92521FFD2003EA6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,10 +119,9 @@
 		3AEBC9EE2521FFD0003EA6E2 /* Scale WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3AEBC9EF2521FFD0003EA6E2 /* InterfaceController.swift */,
+				3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */,
 				3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */,
 				3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */,
-				3AEBC9F32521FFD0003EA6E2 /* NotificationController.swift */,
 				3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */,
 				3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */,
 				3AEBC9F92521FFD2003EA6E2 /* Info.plist */,
@@ -260,11 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AEBC9F42521FFD0003EA6E2 /* NotificationController.swift in Sources */,
 				3AEBCA0925220368003EA6E2 /* ConfirmationInterfaceController.swift in Sources */,
 				3AEBC9F62521FFD0003EA6E2 /* ComplicationController.swift in Sources */,
 				3AEBC9F22521FFD0003EA6E2 /* ExtensionDelegate.swift in Sources */,
-				3AEBC9F02521FFD0003EA6E2 /* InterfaceController.swift in Sources */,
+				3AEBC9F02521FFD0003EA6E2 /* MainInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

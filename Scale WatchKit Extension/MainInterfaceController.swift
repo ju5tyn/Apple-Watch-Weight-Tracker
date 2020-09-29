@@ -23,15 +23,14 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        //workaround to set corner radius
         updateWeightButtonGroup.setCornerRadius(25)
         
         
         currentWeight = 75.5
-        weightSlider.setValue(Float(currentWeight!))
-        kilogramLabel.setText("\(currentWeight!)")
+        setUI()
         
         crownSequencer.delegate = self
-        crownSequencer.focus()
         // Configure interface objects here.
     }
     
@@ -51,32 +50,17 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         
         let newValue = currentWeight! + (2*Double(rotationalDelta))
-        if newValue < 1 {
-            currentWeight = 1
-        } else if newValue > 100 {
-            currentWeight = 100
-        } else {
-            currentWeight = newValue
-        }
-        
-        let weightLabelText = String(round(currentWeight!*10)/10)
-        //currentWeight = currentWeight?.rounded()
-        kilogramLabel.setText("\(weightLabelText)")
-        weightSlider.setValue(Float(currentWeight!))
-    }
-    
-    @IBAction func updateWeightButtonPressed() {
-        
-        
-        
+        setWeight(value: newValue)
     }
     
     @IBAction func weightSliderPressed(_ value: Float) {
         
+        setWeight(value: Double(value))
         
+    }
+    
+    func setWeight(value: Double){
         
-        //let newValue = currentWeight! + Double(value)
-        print(Double(value))
         if value < 1 {
             currentWeight = 1
         } else if value > 100 {
@@ -84,10 +68,23 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
         } else {
             currentWeight = Double(value)
         }
+        
+        setUI()
+        
+    }
+    
+    func setUI(){
+        
         let weightLabelText = String(round(currentWeight!*10)/10)
-        //currentWeight = currentWeight?.rounded()
-        kilogramLabel.setText("\(weightLabelText)kg")
+        kilogramLabel.setText("\(weightLabelText)")
         weightSlider.setValue(Float(currentWeight!))
+        
+    }
+    
+    @IBAction func updateWeightButtonPressed() {
+        
+        
+        
     }
     
     
