@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17156" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17034"/>
     </dependencies>
     <scenes>
         <!--Scale-->
@@ -21,22 +22,15 @@
                                 </label>
                             </items>
                         </group>
-                        <slider width="1" height="0.040000000000000001" alignment="left" continuous="YES" value="75" maximum="100" steps="200" minimumImage="nil" maximumImage="nil" id="Q96-By-w7v">
-                            <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="weightSliderPressed:" destination="AgC-eL-Hgc" id="bQW-if-fQv"/>
-                            </connections>
-                        </slider>
                         <dateLabel alignment="center" verticalAlignment="bottom" id="SGb-xP-9Pc">
-                            <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="boldSystem" pointSize="16"/>
                             <dateFormatterStyle key="dateStyle" medium="YES"/>
                         </dateLabel>
                         <group width="1" alignment="left" verticalAlignment="bottom" layout="vertical" id="HF7-DC-Jtx">
                             <items>
                                 <button width="1" height="50" alignment="left" verticalAlignment="bottom" title="Update Weight" id="iv0-oa-aWQ">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="italicSystem" weight="bold" pointSize="18"/>
                                     <connections>
                                         <action selector="updateWeightButtonPressed" destination="AgC-eL-Hgc" id="m43-Gd-LlU"/>
@@ -50,7 +44,6 @@
                         <outlet property="kilogramLabel" destination="DkM-U7-j2k" id="K21-tG-hUN"/>
                         <outlet property="updateWeightButton" destination="iv0-oa-aWQ" id="47G-ja-lJ8"/>
                         <outlet property="updateWeightButtonGroup" destination="HF7-DC-Jtx" id="IAd-9d-Cb3"/>
-                        <outlet property="weightSlider" destination="Q96-By-w7v" id="VyB-Xb-4Ii"/>
                     </connections>
                 </controller>
             </objects>
@@ -61,10 +54,10 @@
             <objects>
                 <controller alwaysBounce="YES" fullScreen="YES" id="Es9-VC-6iz" customClass="ConfirmationInterfaceController" customModule="Scale_WatchKit_Extension">
                     <items>
-                        <imageView width="50" height="50" alignment="center" verticalAlignment="center" image="checkmark.circle.fill" catalog="system" id="bVB-AM-VJy">
-                            <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageView width="55" height="50" alignment="center" verticalAlignment="center" image="checkmark.circle.fill" catalog="system" animationDuration="10" id="bVB-AM-VJy">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
-                        <label width="1" alignment="center" verticalAlignment="center" text="Done" textAlignment="center" id="8gf-my-9ZV"/>
+                        <label width="1" alignment="center" verticalAlignment="center" text="Weight Updated" textAlignment="center" id="8gf-my-9ZV"/>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="bnL-Ks-orR">
                             <items>
                                 <button width="1" height="50" alignment="left" verticalAlignment="bottom" title="OK" id="Sq0-u0-Zge">
@@ -86,6 +79,5 @@
     </scenes>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="nil" width="128" height="128"/>
     </resources>
 </document>

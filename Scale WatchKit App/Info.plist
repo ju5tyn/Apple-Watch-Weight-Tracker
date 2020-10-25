@@ -27,5 +27,9 @@
 	</array>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allow app to access Health Data for weight logging</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Allow app to access Health Data for weight logging</string>
 </dict>
 </plist>

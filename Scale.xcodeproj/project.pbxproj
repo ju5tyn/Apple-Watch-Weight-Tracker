@@ -16,6 +16,9 @@
 		3AEBC9F62521FFD0003EA6E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */; };
 		3AEBC9F82521FFD2003EA6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */; };
 		3AEBCA0925220368003EA6E2 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */; };
+		3AEBCA0E25234811003EA6E2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEBCA0D25234811003EA6E2 /* HealthKit.framework */; };
+		3AEBCA10252355F3003EA6E2 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA0F252355F3003EA6E2 /* HealthKitSetupAssistant.swift */; };
+		3AEBCA122523641D003EA6E2 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA112523641D003EA6E2 /* ProfileDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,11 @@
 		3AEBC9F92521FFD2003EA6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEBC9FA2521FFD2003EA6E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationInterfaceController.swift; sourceTree = "<group>"; };
+		3AEBCA0A252343CA003EA6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AEBCA0B25234810003EA6E2 /* Scale WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scale WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		3AEBCA0D25234811003EA6E2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AEBCA0F252355F3003EA6E2 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		3AEBCA112523641D003EA6E2 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEBCA0E25234811003EA6E2 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +99,11 @@
 		3AEBC9D02521FFC9003EA6E2 = {
 			isa = PBXGroup;
 			children = (
+				3AEBCA0A252343CA003EA6E2 /* Info.plist */,
 				3AEBC9DF2521FFCA003EA6E2 /* Scale WatchKit App */,
 				3AEBC9EE2521FFD0003EA6E2 /* Scale WatchKit Extension */,
 				3AEBC9D82521FFCA003EA6E2 /* Products */,
+				3AEBCA0C25234811003EA6E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,8 +130,11 @@
 		3AEBC9EE2521FFD0003EA6E2 /* Scale WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3AEBCA0B25234810003EA6E2 /* Scale WatchKit Extension.entitlements */,
 				3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */,
 				3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */,
+				3AEBCA112523641D003EA6E2 /* ProfileDataStore.swift */,
+				3AEBCA0F252355F3003EA6E2 /* HealthKitSetupAssistant.swift */,
 				3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */,
 				3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */,
 				3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */,
@@ -128,6 +142,14 @@
 				3AEBC9FA2521FFD2003EA6E2 /* PushNotificationPayload.apns */,
 			);
 			path = "Scale WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		3AEBCA0C25234811003EA6E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AEBCA0D25234811003EA6E2 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEBCA0925220368003EA6E2 /* ConfirmationInterfaceController.swift in Sources */,
+				3AEBCA122523641D003EA6E2 /* ProfileDataStore.swift in Sources */,
 				3AEBC9F62521FFD0003EA6E2 /* ComplicationController.swift in Sources */,
 				3AEBC9F22521FFD0003EA6E2 /* ExtensionDelegate.swift in Sources */,
 				3AEBC9F02521FFD0003EA6E2 /* MainInterfaceController.swift in Sources */,
+				3AEBCA10252355F3003EA6E2 /* HealthKitSetupAssistant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Scale WatchKit Extension/Scale WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KR9D699PKJ;
 				INFOPLIST_FILE = "Scale WatchKit Extension/Info.plist";
@@ -429,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Scale WatchKit Extension/Scale WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KR9D699PKJ;
 				INFOPLIST_FILE = "Scale WatchKit Extension/Info.plist";
@@ -491,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KR9D699PKJ;
+				INFOPLIST_FILE = Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ju5tyn.Scale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KR9D699PKJ;
+				INFOPLIST_FILE = Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ju5tyn.Scale;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -50,5 +50,9 @@
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allow app to access Health Data for weight logging</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Allow app to access Health Data for weight logging</string>
 </dict>
 </plist>

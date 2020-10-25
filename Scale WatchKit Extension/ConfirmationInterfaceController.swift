@@ -6,7 +6,7 @@
 //  Copyright © 2020 Justyn Henman. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import WatchKit
 
 class ConfirmationInterfaceController: WKInterfaceController {
@@ -16,9 +16,8 @@ class ConfirmationInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        //workaround to set corner radius of buttons
         buttonGroup.setCornerRadius(25)
-        
-        //crownSequencer.focus()
     }
     
     
