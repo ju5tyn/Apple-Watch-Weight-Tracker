@@ -13,12 +13,9 @@
 		3AEBC9EB2521FFD0003EA6E2 /* Scale WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEBC9EA2521FFD0003EA6E2 /* Scale WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3AEBC9F02521FFD0003EA6E2 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */; };
 		3AEBC9F22521FFD0003EA6E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */; };
-		3AEBC9F62521FFD0003EA6E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */; };
 		3AEBC9F82521FFD2003EA6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */; };
 		3AEBCA0925220368003EA6E2 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */; };
 		3AEBCA0E25234811003EA6E2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEBCA0D25234811003EA6E2 /* HealthKit.framework */; };
-		3AEBCA10252355F3003EA6E2 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA0F252355F3003EA6E2 /* HealthKitSetupAssistant.swift */; };
-		3AEBCA122523641D003EA6E2 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBCA112523641D003EA6E2 /* ProfileDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +69,6 @@
 		3AEBC9EA2521FFD0003EA6E2 /* Scale WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Scale WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEBC9F92521FFD2003EA6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEBC9FA2521FFD2003EA6E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -80,8 +76,6 @@
 		3AEBCA0A252343CA003EA6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEBCA0B25234810003EA6E2 /* Scale WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scale WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3AEBCA0D25234811003EA6E2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		3AEBCA0F252355F3003EA6E2 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
-		3AEBCA112523641D003EA6E2 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,10 +127,7 @@
 				3AEBCA0B25234810003EA6E2 /* Scale WatchKit Extension.entitlements */,
 				3AEBC9EF2521FFD0003EA6E2 /* MainInterfaceController.swift */,
 				3AEBCA0825220368003EA6E2 /* ConfirmationInterfaceController.swift */,
-				3AEBCA112523641D003EA6E2 /* ProfileDataStore.swift */,
-				3AEBCA0F252355F3003EA6E2 /* HealthKitSetupAssistant.swift */,
 				3AEBC9F12521FFD0003EA6E2 /* ExtensionDelegate.swift */,
-				3AEBC9F52521FFD0003EA6E2 /* ComplicationController.swift */,
 				3AEBC9F72521FFD2003EA6E2 /* Assets.xcassets */,
 				3AEBC9F92521FFD2003EA6E2 /* Info.plist */,
 				3AEBC9FA2521FFD2003EA6E2 /* PushNotificationPayload.apns */,
@@ -280,11 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEBCA0925220368003EA6E2 /* ConfirmationInterfaceController.swift in Sources */,
-				3AEBCA122523641D003EA6E2 /* ProfileDataStore.swift in Sources */,
-				3AEBC9F62521FFD0003EA6E2 /* ComplicationController.swift in Sources */,
 				3AEBC9F22521FFD0003EA6E2 /* ExtensionDelegate.swift in Sources */,
 				3AEBC9F02521FFD0003EA6E2 /* MainInterfaceController.swift in Sources */,
-				3AEBCA10252355F3003EA6E2 /* HealthKitSetupAssistant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
