@@ -21,24 +21,6 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
     var currentWeight: Double?
     
     
-    private func authorizeHealthKit() {
-        HealthKitSetupAssistant.authorizeHealthKit { (authorised, error) in
-            guard authorised else{
-                
-                let baseMessage = "HealthKit auth failed"
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                } else{
-                    print(baseMessage)
-                }
-                
-                return
-            }
-            print("healthkit authorised")
-        }
-    }
-    
     
     
     override func awake(withContext context: Any?) {
@@ -51,10 +33,10 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
         
         authorizeHealthKit()
         
-        currentWeight = 0
-        
-        loadBodyMass()
-        updateUI()
+        DispatchQueue.main.async {
+            self.loadBodyMass()
+        }
+        //updateUI()
         
         crownSequencer.delegate = self
         // Configure interface objects here.
@@ -63,9 +45,6 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        authorizeHealthKit()
-        loadBodyMass()
-        updateUI()
         
         crownSequencer.focus()
         
@@ -75,17 +54,29 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    @IBAction func updateWeightButtonPressed() {
+        
+        loadBodyMass()
+        
+    }
 
+    @IBAction func pullHKButtonPressed() {
+            
+        authorizeHealthKit()
+        
+    }
+    
+    @IBAction func displayHKButtonPressed() {
+        
+        loadBodyMass()
+    }
+    
+    
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         
         let newValue = currentWeight! + (2*Double(rotationalDelta))
         setWeight(value: newValue)
-    }
-    
-    @IBAction func weightSliderPressed(_ value: Float) {
-        
-        setWeight(value: Double(value))
-        
     }
     
     func setWeight(value: Double){
@@ -109,13 +100,7 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
         //weightSlider.setValue(Float(currentWeight!))
         
     }
-    
-    @IBAction func updateWeightButtonPressed() {
-        
-        
-        
-    }
-    
+
     func loadBodyMass() {
         
         guard let bodyMassSampleType = HKSampleType.quantityType(forIdentifier: .height) else{
@@ -136,13 +121,50 @@ class MainInterfaceController: WKInterfaceController, WKCrownDelegate {
             }
             
             self.currentWeight = sample.quantity.doubleValue(for: HKUnit.gram())/1000
-            //print(self.currentWeight)
+            self.updateUI()
+            print(self.currentWeight)
         }
         
     }
     
+    private func authorizeHealthKit() {
+        HealthKitSetupAssistant.authorizeHealthKit { (authorised, error) in
+            guard authorised else{
+                
+                let baseMessage = "HealthKit auth failed"
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else{
+                    print(baseMessage)
+                }
+                
+                return
+            }
+            print("healthkit authorised")
+        }
+    }
     
-    
+    func initialiseHealthKit() {
+        
+        let options = {
+            permissions: do {
+                read: ["Weight"],
+                write: ["Weight"]
+            }
+        }
+        
+        HealthKit.initHealthKit(options: Object, (err: string, results: Object) => {
+            if (err) {
+                console.log("error initializing Healthkit: ", err);
+                return;
+            }
+            // Healthkit is initialized...
+            // now safe to read and write Healthkit data...
+        })
+        
+        
+    }
     
     
     

@@ -10,6 +10,10 @@ import HealthKit
 
 class ProfileDataStore {
     
+    
+    
+    
+    
     class func getCurrentBodyMass(for sampleType: HKSampleType, completion: @escaping (HKQuantitySample?, Error?) -> Swift.Void) {
         
         let currentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast, end: Date(), options: .strictEndDate)

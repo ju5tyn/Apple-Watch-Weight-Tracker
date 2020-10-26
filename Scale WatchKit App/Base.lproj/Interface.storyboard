@@ -22,6 +22,22 @@
                                 </label>
                             </items>
                         </group>
+                        <group width="1" alignment="left" id="O8g-2s-0aJ">
+                            <items>
+                                <button width="85" height="43" alignment="left" title="PULL HealthKit" backgroundImage="heart.fill" catalog="system" id="fUU-Xw-8ud">
+                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="pullHKButtonPressed" destination="AgC-eL-Hgc" id="50B-8l-6Qm"/>
+                                    </connections>
+                                </button>
+                                <button width="92" height="43" alignment="left" title="DISPLAY Healthkit" backgroundImage="display" catalog="system" id="7PM-YL-uNy">
+                                    <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="displayHKButtonPressed" destination="AgC-eL-Hgc" id="FuN-87-T3H"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                         <dateLabel alignment="center" verticalAlignment="bottom" id="SGb-xP-9Pc">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="boldSystem" pointSize="16"/>
@@ -79,5 +95,7 @@
     </scenes>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="display" catalog="system" width="128" height="100"/>
+        <image name="heart.fill" catalog="system" width="128" height="105"/>
     </resources>
 </document>
